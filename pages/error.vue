@@ -1,26 +1,18 @@
 <template>
   <section class="container">
-    <div>
-      <h1 class="is-size-4">
-        {{ `起床時間:${wakeUpHour}時${wakeUpTime}分` }}
-      </h1>
-      <countdown />
+    <div class="title">
+        mission Erorr!!
     </div>
   </section>
 </template>
 
 <script>
-import Countdown from '~/components/Countdown.vue'
-
 export default {
   data() {
     return {
-      wakeUpHour: '08',
-      wakeUpTime: '30'
     }
   },
   components: {
-    'countdown': Countdown,
   }
 }
 </script>

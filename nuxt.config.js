@@ -1,8 +1,18 @@
 const pkg = require('./package')
+const routesList = require('data/routeList.json')
 
 
 module.exports = {
   mode: 'spa',
+
+  generate: {
+    generate: {
+      routes: [
+        'success',
+        'error'
+      ]
+    }
+  },
 
   /*
   ** Headers of the page
