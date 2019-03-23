@@ -12,7 +12,7 @@ import moment from 'moment'
 export default {
   data() {
     return {
-      cowntdown: this.updateCowntdown
+      cowntdown: ''
     }
   },
   components: {
@@ -31,7 +31,6 @@ export default {
       const seconds = duration.seconds();
       
       this.cowntdown = `${minutes}分${seconds}秒`;
-      console.log(this.cowntdown);
     }
   },
   mounted () {
