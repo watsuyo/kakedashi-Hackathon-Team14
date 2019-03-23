@@ -1,35 +1,33 @@
 <template>
   <section class="container">
     <div>
-      <logo />
-      <h1 class="title">
-        kakedashi-Hackathon-Team14
+      <h1 class="is-size-4">
+        {{ `起床時間:${wakeUpHour}時${wakeUpTime}分` }}
       </h1>
-      <h2 class="subtitle">
-        My hunky-dory Nuxt.js project
-      </h2>
+      <countdown />
       <div class="links">
         <a
           href="https://nuxtjs.org/"
           target="_blank"
           class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
+        >解除!!</a>
       </div>
     </div>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import Countdown from '~/components/Countdown.vue'
 
 export default {
+  data() {
+    return {
+      wakeUpHour: '08',
+      wakeUpTime: '30'
+    }
+  },
   components: {
-    Logo
+    'countdown': Countdown
   }
 }
 </script>
