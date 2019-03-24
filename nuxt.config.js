@@ -1,5 +1,5 @@
 const pkg = require('./package')
-const routesList = require('data/routeList.json')
+// const routesList = require('data/routeList.json')
 
 
 module.exports = {

@@ -1,14 +1,22 @@
 <template>
   <div>
-    <h2 class="is-size-4">
-        タイムリミット: {{ cowntdown }}
-    </h2>
-    <div>
-      <nuxt-link to="success">
-        <h2 @click="stopTimer" class="button is-success">
-            STOP!!
+    <div class="cowntdownPage">
+      <div>
+        <h2 class="box">
+          <p class="is-size-6	dethTweet">悪魔ツイートまで</p>
+          <div class="button is-danger is-rounded is-large remaining">残り</div>
+          <div class="timer">
+            <p class="is-size-1">{{ cowntdown }}</p>
+          </div>
         </h2>
-      </nuxt-link>
+      </div>
+      <div>
+        <nuxt-link to="success">
+          <h2 @click="stopTimer" class="button is-danger is-large stop">
+              STOP!!
+          </h2>
+        </nuxt-link>
+      </div>
     </div>
   </div>
 </template>
@@ -21,7 +29,7 @@ export default {
     return {
       isTimer: true,
       cowntdown: null,
-      isMission: true
+      isMission: true,
     }
   },
   created() {
@@ -30,7 +38,7 @@ export default {
   methods: {
     updateCowntdown () {
       if(this.isTimer){
-        const diff = moment( '2019-03-24' ).diff( moment() );
+        const diff = moment( '2019-03-24 10:46' ).diff( moment() );
         const duration = moment.duration( diff );
         const days    = Math.floor( duration.asDays() );
         const hours   = duration.hours();
@@ -45,7 +53,6 @@ export default {
     stopTimer () {
       this.isTimer = false;
       this.route = 'success';
-      console.log(this.route);
     }
   },
   mounted () {
@@ -54,6 +61,27 @@ export default {
 }
 </script>
 
-
 <style>
+.cowntdownPage{
+  z-index: 5;
+}
+.stop {
+  top: 300px;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.box {
+  width: 320px;
+  height: 200px;
+}
+.timer {
+  /* bottom: 50px; */
+}
+.remaining {
+  /* top: 30px; */
+}
+/* .dethTweet {
+  top: 40px;
+} */
 </style>

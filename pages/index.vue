@@ -1,22 +1,26 @@
 <template>
   <section class="container">
-    <div>
-      <h1 class="is-size-4">
+    <div class="main">
+      <h1 class="is-size-5 wakeUpTime">
         {{ `起床時間:${wakeUpHour}時${wakeUpTime}分` }}
       </h1>
-      <countdown />
+      <img :src="bomb" class="bombImg">
+      <countdown class="countdown"/>
     </div>
   </section>
 </template>
 
 <script>
 import Countdown from '~/components/Countdown.vue'
+import bomb from '~/assets/bomb.jpg'
+
 
 export default {
   data() {
     return {
       wakeUpHour: '08',
-      wakeUpTime: '30'
+      wakeUpTime: '30',
+      bomb
     }
   },
   components: {
@@ -33,6 +37,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  top: -115px;
 }
 
 .title {
@@ -55,5 +60,28 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.wakeUpTime {
+  z-index: 5;
+}
+.bombImg {
+  z-index: 4;
+}
+
+.main {
+  position: relative; 
+}
+.main .countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  margin:0;/*余計な隙間を除く*/
+  padding:0;/*余計な隙間を除く*/
+  color: white;/*アイコン色*/
+  font-size: 60px;/*サイズ*/
 }
 </style>
