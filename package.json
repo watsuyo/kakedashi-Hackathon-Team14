@@ -8,12 +8,15 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "copy_env_development": "cp env/.env_development .env"
   },
   "dependencies": {
     "@nuxtjs/bulma": "^1.2.1",
+    "@nuxtjs/dotenv": "^1.3.0",
     "@nuxtjs/onesignal": "^3.0.0-beta.14",
     "@nuxtjs/pwa": "^3.0.0-beta.14",
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "moment": "^2.24.0",
     "nuxt": "^2.3.4",

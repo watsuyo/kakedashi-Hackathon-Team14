@@ -1,6 +1,8 @@
 const pkg = require('./package')
 // const routesList = require('data/routeList.json')
 
+require('dotenv').config();
+const { CLIENT_ID, SCRIPT_ID } = process.env;
 
 module.exports = {
   mode: 'spa',
@@ -53,7 +55,8 @@ module.exports = {
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     '@nuxtjs/onesignal',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    '@nuxtjs/dotenv'
   ],
 
   oneSignal: {
@@ -83,5 +86,9 @@ module.exports = {
     extend(config, ctx) {
       
     }
+  },
+  env: {
+    CLIENT_ID,
+    SCRIPT_ID
   }
 }
